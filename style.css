@@ -1,0 +1,37 @@
+            .vote-wrapper
+            {
+                width: 100%;
+                background-color: #0094ff;
+                height: 50px;
+                border-style: solid;
+            }
+            
+            .votebar-wrapper
+            {
+                width: 80%;
+                height: 100%;
+                float: left;
+                background-color: #00ff90;              
+            }
+
+            .vote-bar
+            {
+                width: 100%;
+                height: 100%;
+                float: left;
+                background-color: #f00;
+            }
+            
+            .vote-minus
+            {
+                float: left;
+                width: 10%;
+                height: 100%;
+            }
+            
+            .vote-plus
+            {
+                float: right;
+                width: 10%;
+                height: 100%;
+            } 
