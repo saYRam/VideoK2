@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/StyleSheet.css" />
+        <title>animate demo</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="vote-wrapper">
+
+                <button id="vote-plus" class="vote-minus btn-primary"></button>
+
+                <div class="votebar-wrapper">
+                    <div id="vote-bar" class="vote-bar"></div>
+                </div>
+
+                <button id="vote-minus" class="vote-minus btn-danger"></button>
+            </div>
+
+        </div> 
+
+        <script type="text/javascript" lang="ja">
+            //vote-bar currentLength style dosyasnan geliyor. Java script ile ayarlansın.
+            var likes = 365;
+            var disLikes = 1185;
+            var likesRate = (100 * likes) / (likes + disLikes) 
+
+            var curBarLength = likesRate;
+            var addLength = 1;
+            var newBarLengthForPlus = curBarLength + addLength;
+            var newBarLengthForMinus = curBarLength - addLength;
+
+            $('#vote-bar').css("width", curBarLength + "%");
+
+            $('#vote-plus').hover(function () {
+                $("#vote-bar").stop(true).animate({
+                    width: newBarLengthForPlus + '%'
+                }, 550);
+            }, function () {
+                $("#vote-bar").animate({
+                    width: curBarLength + "%"
+                }, 550);
+            });
+
+            $('#vote-minus').hover(function () {
+                $("#vote-bar").stop(true).animate({
+                    width: newBarLengthForMinus + '%'
+                }, 550);
+            }, function () {
+                $("#vote-bar").animate({
+                    width: curBarLength + "%"
+                }, 550);
+            });
+
+
+        </script>
+
+    </body>
+</html>
